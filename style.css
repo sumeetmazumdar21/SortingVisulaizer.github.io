@@ -1,0 +1,44 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+.header{
+   height: 6vh;
+   width: 100%;
+   background-color: green;
+    color: yellow;
+}
+
+.header span{
+    font-size: 2rem;
+    font-weight: bolder;
+}
+
+.sorting-btns-container{
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(132, 171, 137);
+}
+
+.sorting-btns-container button{
+    margin: 2px 2px;
+}
+
+
+#array_container{
+    height: 50vh;
+    width: 50vw;
+    display: flex;
+    align-items: flex-end;
+    padding-left: 20px;
+}
+
+.bar{
+    width: 10px;
+    background-color: gray;
+    margin: 3px;
+}

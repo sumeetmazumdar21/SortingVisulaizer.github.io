@@ -1,4 +1,3 @@
-
 // button identifiers
 
 let randomize = document.getElementById("randomize");
@@ -11,50 +10,96 @@ let change_size = document.getElementById("change-size");
 let bubble_sort = document.getElementById("bubble-sort");
 
 var sort_button=document.querySelectorAll(".sort");
+var bar_width = 10;
 
+var div_sizes=[];
+var divs=[];
+var margin_size;
+var cont=document.getElementById("array_container");
+cont.style="flex-direction:row";
 
 // Array Creation
 
-randomize.addEventListener("click",generateArray);
-
-let min = 1;
-let max = 255;
-let arraySize = 50;
-
+var min = 1;
+var max = 255;
+var arraySize = 50;
 
 let array = [arraySize];
 let sortedArray = [arraySize];
 
+
+randomize.addEventListener("click", generateArray);
+
 generateArray();
+
+
 
 function generateArray(){
     for(var i = 0; i < arraySize; i++){
-        array[i] = generateArrayValue(min, max);
+        array[i] = Math.floor(Math.random() * (max- min) + min);;
 
         if(array[i] == array[i - 1]){
-            array[i] = generateArrayValue(min, max);
+            array[i] =Math.floor(Math.random() * (max- min) + min);;
         }
     }
+
+    showBars();
 }
 
 
-function generateArrayValue(){
-    return Math.floor(Math.random() * (max- min) + min);
-}
 
 
 // Updating Array Size
 
 
+change_size.addEventListener("click", updateArraySize);
+change_size.addEventListener("click", decreaseArraySize);
+
+function updateArraySize(){
+    arraySize = 100;
+    generateArray();
+
+    change_size.addEventListener("click", decreaseArraySize);
+}
+
+function decreaseArraySize(){
+    arraySize = 50;
+    generateArray();
+
+    change_size.addEventListener("click", updateArraySize);
+}
+
 
 // Creating bars for the array
 
-for(let i = 0; i < array.length; i++){
-    const bar = document.createElement("div");
-    bar.style.height= array[i] + "px";
-    bar.classList.add("bar");
-    array_container.appendChild(bar);
+function showBars(){
+
+    array_container.innerHTML= "";
+
+    for(let i = 0; i < array.length; i++){
+        const bar = document.createElement("div");
+        bar.style.height= array[i] + "px";
+        bar.classList.add("bar");
+        array_container.appendChild(bar);
+    }
 }
+
+
+// Sorting
+
+function insertionSort(){
+    disable_buttons();
+    insertion(array);
+    showBars();
+}
+
+
+
+
+
+
+
+
 
 
 
@@ -62,10 +107,9 @@ for(let i = 0; i < array.length; i++){
 
 
 //Running the appropriate algorithm.
-for(var i=0;i<sort_button.length;i++)
-{
-    sort_button[i].addEventListener("click",sort);
-}
+
+selection_sort.addEventListener("click", selectionSort);
+
 
 function disable_buttons()
 {
@@ -74,32 +118,10 @@ function disable_buttons()
         sort_button[i].classList=[];
         sort_button[i].classList.add("butt_locked");
         sort_button[i].disabled=true;
+        randomize.disabled="true";
+        change_size.disabled="true";
 
-        /*
-        inp_as.disabled=true;
-        inp_gen.disabled=true;
-        inp_aspeed.disabled=true;
-        */
+       
     }
 }
 
-function sort()
-{
-    disable_buttons();
-
-    this.classList.add("butt_selected");
-    switch(this.innerHTML)
-    {
-        case "Bubble Sort":Bubble();
-                        break;
-        case "Selection Sort":Selection_sort();
-                        break;
-        case "Insertion Sort":Insertion();
-                        break;
-        case "Merge Sort":Merge();
-                        break;
-        case "Quick Sort":Quick();
-                        break;
-        
-    }
-}

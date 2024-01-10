@@ -28,11 +28,29 @@
     </div>
 
     <div class="controls">
-
+        <button id="skip-back">Skip Back</button>
+        <button id="step-back">Step Back</button>
+        <button id="pause">Pause</button>
+        <button id="step-fwd">Step Forward</button>
+        <button id="skip-fwd">Skip Forward</button>
+        <div id="animation-speed">
+            <input type="range" min="1" max="5" step="1">
+            <span>Animation Speed</span>
+        </div>
+        <div id="display-dimension">
+            <label for="width">w:</label>
+            <input type="number" min="100" max="2000">
+            <label for="height">h:</label>
+            <input type="number" min="200" max="3000">
+        </div>
+        <button>Change Canvas Size</button>
+        <button>Move Controls</button>
     </div>
 
     <div class="footer">
-
+        <span>
+            Algorithm Visulaiztions
+        </span>
     </div>
     <script src="script.js"></script>
     <script src="quickSort.js"></script>

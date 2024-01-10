@@ -4,7 +4,10 @@
     box-sizing: border-box;
 }
 
-
+body{
+    height: 100vh;
+    width: 100vw;
+}
 
 .header{
    height: 6vh;
@@ -21,7 +24,7 @@
 .sorting-btns-container{
     display: flex;
     flex-direction: row;
-    background-color: rgb(132, 171, 137);
+    background-color: rgb(217, 246, 221);
 }
 
 .sorting-btns-container button{
@@ -42,3 +45,94 @@
     background-color: gray;
     margin: 3px;
 }
+
+.controls{
+    width: 100%;
+    height: 7vh;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    background-color:  rgb(217, 246, 221);
+    bottom: 5vh;
+    left: 0;
+}
+
+.controls button{
+    height: 50%;
+    margin: 5px 3px;
+}
+
+.controls #animation-speed{
+    display: flex;
+    flex-direction: column;
+    color:Green;
+    margin: 5px 4px;
+    font-weight: 200;
+}
+
+.controls #display-dimension{
+    display: flex;
+    flex-direction: row;
+    height: 50%;
+    margin: 5px 5px;
+}
+
+
+
+.footer{
+    height: 5vh;
+    width: 100%;
+    background-color: green;
+    color: yellow;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.footer span{
+    font-weight: 300;
+    display: flex;
+    position: relative;
+    justify-content: flex-start;
+    text-align: center;
+    align-items: center;
+}
+
+
+/* Input range CSS */
+
+input[type=range] {
+    height: 0.2rem;
+    -webkit-appearance: none;
+    margin: 2px 0;
+    width: 100%;
+  }
+  input[type=range]:focus {
+    outline: none;
+  }
+  input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 0.5rem;
+    cursor: pointer;
+    animate: 0.2s;
+    /* box-shadow: 1px 1px 1px #000000; */
+    background: #cccdcd;
+    border-radius: 2px;
+    /* border: 1px solid #000000; */
+  }
+  input[type=range]::-webkit-slider-thumb {
+    box-shadow: 1px 1px 1px #000000;
+    border: 1px solid #000000;
+    height: 1rem;
+    width: 15px;
+    border-radius: 5px;
+    background: #FFFFFF;
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -4px;
+  }
+  input[type=range]:focus::-webkit-slider-runnable-track {
+    background: #cccdcd;
+  }
+  
+  

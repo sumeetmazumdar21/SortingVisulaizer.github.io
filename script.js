@@ -1,3 +1,4 @@
+
 // button identifiers
 
 let randomize = document.getElementById("randomize");
@@ -18,6 +19,15 @@ var margin_size;
 var cont=document.getElementById("array_container");
 cont.style="flex-direction:row";
 
+
+// selection_sort.addEventListener("click", selectionSort);
+// insertion_sort.addEventListener("click", insertionSort);
+// bubble_sort.addEventListener("click", bubbleSort);
+// merge_sort.addEventListener("click", mergeSort);
+// quick_sort.addEventListener("click", quickSort);
+
+
+
 // Array Creation
 
 var min = 1;
@@ -27,12 +37,9 @@ var arraySize = 50;
 let array = [arraySize];
 let sortedArray = [arraySize];
 
-
 randomize.addEventListener("click", generateArray);
 
 generateArray();
-
-
 
 function generateArray(){
     for(var i = 0; i < arraySize; i++){
@@ -87,11 +94,36 @@ function showBars(){
 
 // Sorting
 
-function insertionSort(){
-    disable_buttons();
-    insertion(array);
-    showBars();
-}
+// function insertionSort(){
+//     disable_buttons();
+//     insertionSort(array);
+    
+//     showBars();
+// }
+
+// function selectionSort(){
+//     disable_buttons();
+//     selectionSort(array);
+//     showBars();
+// }
+
+// function bubbleSort(){
+//     disable_buttons();
+//     bubbleSort(array);
+//     showBars();
+// }
+
+// function mergeSort(){
+//     disable_buttons();
+//     mergeSort(array);
+//     showBars();
+// }
+
+// function quickSort(){
+//     disable_buttons();
+//     quickSort(array);
+//     showBars();
+// }
 
 
 
@@ -125,3 +157,26 @@ function disable_buttons()
     }
 }
 
+
+
+
+// function sort()
+// {
+//     disable_buttons();
+
+//     this.classList.add("butt_selected");
+//     switch(this.innerHTML)
+//     {
+//         case "Bubble Sort":bubbleSort();
+//                         break;
+//         case "Selection Sort":selectionSort();
+//                         break;
+//         case "Insertion Sort":insertionSort();
+//                         break;
+//         case "Merge Sort":mergeSort();
+//                         break;
+//         case "Quick Sort":quickSort();
+//                         break;
+        
+//     }
+// }
